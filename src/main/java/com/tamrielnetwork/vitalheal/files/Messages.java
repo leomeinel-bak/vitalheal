@@ -16,33 +16,35 @@
  * along with this program. If not, see https://github.com/TamrielNetwork/VitalHeal/blob/main/LICENSE
  */
 
-package com.tamrielnetwork.vitalfly.listeners;
+package com.tamrielnetwork.vitalheal.files;
 
-import org.bukkit.Location;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
+import com.tamrielnetwork.vitalheal.VitalHeal;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.plugin.java.JavaPlugin;
 
-import static org.bukkit.Material.AIR;
+import java.io.File;
 
+public class Messages {
 
-public class PlayerJoin implements Listener {
+	private final VitalHeal main = JavaPlugin.getPlugin(VitalHeal.class);
+	private final File messagesFile;
+	private final FileConfiguration messagesConf;
 
-	@EventHandler
-	public void onPlayerJoin(PlayerJoinEvent event) {
-		if (!event.getPlayer().hasPermission("vitalfly.fly") || !event.getPlayer().hasPermission("vitalfly.fly.login")) {
-			return;
-		}
+	public Messages() {
+		messagesFile = new File(main.getDataFolder(), "messages.yml");
+		saveMessagesFile();
+		messagesConf = YamlConfiguration.loadConfiguration(messagesFile);
+	}
 
-		if (isInAir(event)) {
-			event.getPlayer().setAllowFlight(true);
-			event.getPlayer().setFlying(true);
+	private void saveMessagesFile() {
+		if (!messagesFile.exists()) {
+			main.saveResource("messages.yml", false);
 		}
 	}
 
-	private boolean isInAir(PlayerJoinEvent event) {
-		Location location = event.getPlayer().getLocation();
-		location.setY(location.getY() - 2);
-		return event.getPlayer().getWorld().getBlockAt(location).getType() == AIR;
+	public FileConfiguration getMessagesConf() {
+		return messagesConf;
 	}
+
 }
