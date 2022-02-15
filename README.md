@@ -68,8 +68,8 @@ This plugin is perfect for any server wanting to give their players some ease of
 
 ### Features
 
-* Feed yourself
-* Feed others
+* Heal yourself
+* Heal others
 
 ### Built With
 
@@ -87,12 +87,12 @@ To get the plugin running on your server follow these simple steps.
 1. Permission: `vitalheal.heal`
 
 * Command: `/vitalheal`
-* Description: Feed yourself
+* Description: Heal yourself
 
 2. Permission: `vitalheal.heal.others`
 
 * Command: `/vitalheal <player>`
-* Description: Feed other players
+* Description: Heal other players
 
 ### Configuration - config.yml
 
