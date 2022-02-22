@@ -38,7 +38,7 @@ public class CmdSpec {
 	}
 
 	public static void doHeal(@NotNull Player senderPlayer) {
-		Chat.sendMessage(senderPlayer,"healed");
+		Chat.sendMessage(senderPlayer, "healed");
 		senderPlayer.setHealth(20);
 	}
 }
