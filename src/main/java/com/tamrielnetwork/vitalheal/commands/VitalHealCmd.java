@@ -18,8 +18,8 @@
 
 package com.tamrielnetwork.vitalheal.commands;
 
-import com.google.common.collect.ImmutableMap;
-import com.tamrielnetwork.vitalheal.utils.Utils;
+import com.tamrielnetwork.vitalheal.utils.commands.Cmd;
+import com.tamrielnetwork.vitalheal.utils.commands.CmdSpec;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -27,57 +27,41 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Objects;
-
 public class VitalHealCmd implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-		// Check args length
-		if (args.length > 1) {
-			Utils.sendMessage(sender, "invalid-option");
+
+		if (Cmd.isArgsLengthGreaterThan(sender, args, 1)) {
 			return true;
 		}
-		// Toggle Crafting Interface
-		healPlayer(sender, args);
+		doHeal(sender, args);
 		return true;
 
 	}
 
-	private void healPlayer(CommandSender sender, String[] args) {
-		// Check if command sender is a player
-		if (!(sender instanceof Player)) {
-			Utils.sendMessage(sender, "player-only");
-			return;
-		}
-		// Check perms
-		if (!sender.hasPermission("vitalheal.heal")) {
-			Utils.sendMessage(sender, "no-perms");
+	private void doHeal(@NotNull CommandSender sender, @NotNull String[] args) {
+		Player senderPlayer = (Player) sender;
+
+		if (Cmd.isInvalidSender(sender)) {
 			return;
 		}
 
-		// Check args length
 		if (args.length == 1) {
-			// Check perms
-			if (!sender.hasPermission("vitalheal.heal.others")) {
-				Utils.sendMessage(sender, "no-perms");
-				return;
-			}
-			if (Bukkit.getPlayer(args[0]) == null) {
-				Utils.sendMessage(sender, "invalid-player");
-				return;
-			}
 			Player player = Bukkit.getPlayer(args[0]);
-			boolean isOnline = Objects.requireNonNull(player).isOnline();
-			if (!isOnline) {
-				Utils.sendMessage(sender, "not-online");
+
+			if (CmdSpec.isInvalidCmd(sender, player, "vitalheal.heal.others")) {
 				return;
 			}
-			Utils.sendMessage(sender, ImmutableMap.of("%player%", player.getName()), "player-healed");
-			player.setHealth(20);
+
+			assert player != null;
+
+			CmdSpec.doHeal(senderPlayer, player);
 			return;
 		}
-		Utils.sendMessage(sender,"healed");
-		((Player) sender).setHealth(20);
+		if (Cmd.isNotPermitted(sender, "vitalheal.heal")) {
+			return;
+		}
+		CmdSpec.doHeal(senderPlayer);
 	}
 }
