@@ -25,7 +25,9 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 public class CmdSpec {
+
 	public static boolean isInvalidCmd(@NotNull CommandSender sender, Player player, @NotNull String perm) {
+
 		if (Cmd.isNotPermitted(sender, perm)) {
 			return true;
 		}
@@ -33,12 +35,15 @@ public class CmdSpec {
 	}
 
 	public static void doHeal(@NotNull CommandSender sender, @NotNull Player player) {
+
 		Chat.sendMessage(sender, ImmutableMap.of("%player%", player.getName()), "player-healed");
 		player.setHealth(20);
 	}
 
 	public static void doHeal(@NotNull Player senderPlayer) {
+
 		Chat.sendMessage(senderPlayer, "healed");
 		senderPlayer.setHealth(20);
 	}
+
 }

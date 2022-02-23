@@ -62,7 +62,7 @@
 
 ### Description
 
-VitalHeal is a  Plugin that gives players the ability to heal.
+VitalHeal is a Plugin that gives players the ability to heal.
 
 This plugin is perfect for any server wanting to give their players some ease of life.
 

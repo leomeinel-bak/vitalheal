@@ -52,6 +52,7 @@ public final class VitalHeal extends JavaPlugin {
 	}
 
 	public Messages getMessages() {
+
 		return messages;
 	}
 

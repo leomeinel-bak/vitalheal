@@ -41,11 +41,11 @@ public class VitalHealCmd implements CommandExecutor {
 	}
 
 	private void doHeal(@NotNull CommandSender sender, @NotNull String[] args) {
-		Player senderPlayer = (Player) sender;
 
 		if (Cmd.isInvalidSender(sender)) {
 			return;
 		}
+		Player senderPlayer = (Player) sender;
 
 		if (args.length == 1) {
 			Player player = Bukkit.getPlayer(args[0]);
@@ -64,4 +64,5 @@ public class VitalHealCmd implements CommandExecutor {
 		}
 		CmdSpec.doHeal(senderPlayer);
 	}
+
 }
