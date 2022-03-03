@@ -59,7 +59,7 @@ public class VitalHealCmd implements CommandExecutor {
 			CmdSpec.doHeal(senderPlayer, player);
 			return;
 		}
-		if (Cmd.isNotPermitted(sender, "vitalheal.heal")) {
+		if (CmdSpec.isInvalidCmd(sender, "vitalheal.heal")) {
 			return;
 		}
 		CmdSpec.doHeal(senderPlayer);

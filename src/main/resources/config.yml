@@ -1,0 +1,5 @@
+# Command cool-down
+cooldown:
+  enabled: true
+  # time in s
+  time: 120

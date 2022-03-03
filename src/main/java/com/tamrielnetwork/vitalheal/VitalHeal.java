@@ -32,7 +32,7 @@ public final class VitalHeal extends JavaPlugin {
 	@Override
 	public void onEnable() {
 
-		Objects.requireNonNull(getCommand("vitalheal")).setExecutor(new VitalHealCmd());
+		Objects.requireNonNull(getCommand("heal")).setExecutor(new VitalHealCmd());
 
 		saveDefaultConfig();
 

@@ -19,19 +19,39 @@
 package com.tamrielnetwork.vitalheal.utils.commands;
 
 import com.google.common.collect.ImmutableMap;
+import com.tamrielnetwork.vitalheal.VitalHeal;
 import com.tamrielnetwork.vitalheal.utils.Chat;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashMap;
+import java.util.UUID;
+
 public class CmdSpec {
+
+	private static final VitalHeal main = JavaPlugin.getPlugin(VitalHeal.class);
+	private static final HashMap<UUID, Long> cooldownMap = new HashMap<>();
 
 	public static boolean isInvalidCmd(@NotNull CommandSender sender, Player player, @NotNull String perm) {
 
 		if (Cmd.isNotPermitted(sender, perm)) {
 			return true;
 		}
-		return Cmd.isInvalidPlayer(sender, player);
+		if (Cmd.isInvalidPlayer(sender, player)) {
+			return true;
+		}
+		return isOnCooldown(sender);
+	}
+
+	public static boolean isInvalidCmd(@NotNull CommandSender sender, @NotNull String perm) {
+
+		if (Cmd.isNotPermitted(sender, perm)) {
+			return true;
+		}
+		return isOnCooldown(sender);
 	}
 
 	public static void doHeal(@NotNull CommandSender sender, @NotNull Player player) {
@@ -44,6 +64,40 @@ public class CmdSpec {
 
 		Chat.sendMessage(senderPlayer, "healed");
 		senderPlayer.setHealth(20);
+	}
+
+	private static void clearMap(@NotNull CommandSender sender) {
+
+		Player senderPlayer = (Player) sender;
+		cooldownMap.remove(senderPlayer.getUniqueId());
+	}
+
+	private static void doTiming(@NotNull CommandSender sender) {
+
+		new BukkitRunnable() {
+
+			@Override
+			public void run() {
+
+				clearMap(sender);
+			}
+		}.runTaskLaterAsynchronously(main, (main.getConfig().getLong("cooldown.time") * 20L));
+	}
+
+	private static boolean isOnCooldown(@NotNull CommandSender sender) {
+
+		Player senderPlayer = (Player) sender;
+
+		boolean isOnCooldown = main.getConfig().getBoolean("cooldown.enabled") && !sender.hasPermission("vitalheal.cooldown.bypass") && cooldownMap.containsKey(senderPlayer.getUniqueId());
+
+		if (isOnCooldown) {
+			String timeRemaining = String.valueOf(cooldownMap.get(senderPlayer.getUniqueId()) - System.currentTimeMillis() / 1000);
+			Chat.sendMessage(sender, ImmutableMap.of("%time-left%", timeRemaining), "cooldown-active");
+			return true;
+		}
+		cooldownMap.put(senderPlayer.getUniqueId(), main.getConfig().getLong("cooldown.time") + System.currentTimeMillis() / 1000);
+		doTiming(sender);
+		return false;
 	}
 
 }

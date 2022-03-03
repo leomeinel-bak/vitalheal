@@ -6,13 +6,16 @@ authors: [ Tamriel Network ]
 website: https://tamriel.site
 description: Gives players the ability to heal.
 commands:
-  vitalheal:
+  heal:
     description: "Main command"
-    usage: "/vitalheal"
+    usage: "/heal <player>"
 permissions:
   vitalheal.heal:
     description: "Permission to heal yourself"
     default: op
   vitalheal.heal.others:
     description: "Permission to heal other players"
+    default: op
+  vitalheal.cooldown.bypass:
+    description: "Permission to bypass cooldown"
     default: op

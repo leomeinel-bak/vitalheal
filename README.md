@@ -86,12 +86,12 @@ To get the plugin running on your server follow these simple steps.
 
 1. Permission: `vitalheal.heal`
 
-* Command: `/vitalheal`
+* Command: `/heal`
 * Description: Heal yourself
 
 2. Permission: `vitalheal.heal.others`
 
-* Command: `/vitalheal <player>`
+* Command: `/heal <player>`
 * Description: Heal other players
 
 ### Configuration - config.yml
