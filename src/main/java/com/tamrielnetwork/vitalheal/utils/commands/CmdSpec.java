@@ -27,6 +27,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class CmdSpec {
@@ -59,7 +60,7 @@ public class CmdSpec {
 
 	public static void doHeal(@NotNull CommandSender sender, @NotNull Player player) {
 
-		Chat.sendMessage(sender, java.util.Map.of("%player%", player.getName()), "player-healed");
+		Chat.sendMessage(sender, Map.of("%player%", player.getName()), "player-healed");
 		player.setHealth(20);
 	}
 
@@ -95,7 +96,7 @@ public class CmdSpec {
 
 		if (isOnCooldown) {
 			String timeRemaining = String.valueOf(cooldownMap.get(senderPlayer.getUniqueId()) - System.currentTimeMillis() / 1000);
-			Chat.sendMessage(sender, java.util.Map.of("%time-left%", timeRemaining), "cooldown-active");
+			Chat.sendMessage(sender, Map.of("%time-left%", timeRemaining), "cooldown-active");
 			return true;
 		}
 		cooldownMap.put(senderPlayer.getUniqueId(), main.getConfig().getLong("cooldown.time") + System.currentTimeMillis() / 1000);
