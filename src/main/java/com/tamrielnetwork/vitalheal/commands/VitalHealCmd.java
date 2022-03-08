@@ -33,7 +33,7 @@ public class VitalHealCmd implements CommandExecutor {
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
 		if (Cmd.isArgsLengthGreaterThan(sender, args, 1)) {
-			return true;
+			return false;
 		}
 		doHeal(sender, args);
 		return true;

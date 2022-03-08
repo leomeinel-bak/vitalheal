@@ -18,7 +18,6 @@
 
 package com.tamrielnetwork.vitalheal.utils.commands;
 
-import com.google.common.collect.ImmutableMap;
 import com.tamrielnetwork.vitalheal.VitalHeal;
 import com.tamrielnetwork.vitalheal.utils.Chat;
 import org.bukkit.command.CommandSender;
@@ -34,6 +33,10 @@ public class CmdSpec {
 
 	private static final VitalHeal main = JavaPlugin.getPlugin(VitalHeal.class);
 	private static final HashMap<UUID, Long> cooldownMap = new HashMap<>();
+	private CmdSpec() {
+
+		throw new IllegalStateException("Utility class");
+	}
 
 	public static boolean isInvalidCmd(@NotNull CommandSender sender, Player player, @NotNull String perm) {
 
@@ -56,7 +59,7 @@ public class CmdSpec {
 
 	public static void doHeal(@NotNull CommandSender sender, @NotNull Player player) {
 
-		Chat.sendMessage(sender, ImmutableMap.of("%player%", player.getName()), "player-healed");
+		Chat.sendMessage(sender, java.util.Map.of("%player%", player.getName()), "player-healed");
 		player.setHealth(20);
 	}
 
@@ -92,7 +95,7 @@ public class CmdSpec {
 
 		if (isOnCooldown) {
 			String timeRemaining = String.valueOf(cooldownMap.get(senderPlayer.getUniqueId()) - System.currentTimeMillis() / 1000);
-			Chat.sendMessage(sender, ImmutableMap.of("%time-left%", timeRemaining), "cooldown-active");
+			Chat.sendMessage(sender, java.util.Map.of("%time-left%", timeRemaining), "cooldown-active");
 			return true;
 		}
 		cooldownMap.put(senderPlayer.getUniqueId(), main.getConfig().getLong("cooldown.time") + System.currentTimeMillis() / 1000);
