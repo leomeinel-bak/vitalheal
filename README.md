@@ -45,7 +45,8 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#commands-and-permissions">Commands and Permissions</a></li>
-        <li><a href="#configuration">Configuration</a></li>
+        <li><a href="#configuration - config.yml">Configuration</a></li>
+		<li><a href="#configuration - messages.yml">Configuration</a></li>
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -94,21 +95,31 @@ To get the plugin running on your server follow these simple steps.
 * Command: `/heal <player>`
 * Description: Heal other players
 
+3. Permission: `vitalheal.cooldown.bypass`
+
+* Description: Bypass cooldown
+
 ### Configuration - config.yml
 
 ```
+# Command cool-down
+cooldown:
+  enabled: true
+  # time in s
+  time: 120
 ```
 
 ### Configuration - messages.yml
 
 ```
+cmd: "&fUsage: &b/heal <player>"
+no-perms: "&cYou don't have enough permissions!"
 player-only: "&cThis command can only be executed by players!"
-invalid-option: "&cInvalid option!"
-no-perms: "&7You don't have enough permissions!"
-invalid-player: "&cInvalid player!"
 not-online: "&cPlayer is not online!"
-fed: "&7You just fed yourself"
-player-fed: "&7You just fed &b%player%"
+same-player: "&cYou can't heal yourself! Use &b/heal"
+player-healed: "&b%player% &fhas been healed"
+healed: "&fYou have been healed"
+cooldown-active: "&cYou can't use that command for another &b%time-left% &cseconds!"
 ```
 
 <!-- ROADMAP -->
