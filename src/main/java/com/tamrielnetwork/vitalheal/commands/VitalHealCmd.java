@@ -27,35 +27,30 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class VitalHealCmd implements CommandExecutor {
+public class VitalHealCmd
+		implements CommandExecutor {
 
 	@Override
-	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-
+	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label,
+	                         @NotNull String[] args) {
 		if (Cmd.isArgsLengthGreaterThan(sender, args, 1)) {
 			return false;
 		}
 		doHeal(sender, args);
 		return true;
-
 	}
 
 	private void doHeal(@NotNull CommandSender sender, @NotNull String[] args) {
-
 		if (Cmd.isInvalidSender(sender)) {
 			return;
 		}
 		Player senderPlayer = (Player) sender;
-
 		if (args.length == 1) {
 			Player player = Bukkit.getPlayer(args[0]);
-
 			if (CmdSpec.isInvalidCmd(sender, player, "vitalheal.heal.others")) {
 				return;
 			}
-
 			assert player != null;
-
 			CmdSpec.doHeal(senderPlayer, player);
 			return;
 		}
@@ -64,5 +59,4 @@ public class VitalHealCmd implements CommandExecutor {
 		}
 		CmdSpec.doHeal(senderPlayer);
 	}
-
 }
