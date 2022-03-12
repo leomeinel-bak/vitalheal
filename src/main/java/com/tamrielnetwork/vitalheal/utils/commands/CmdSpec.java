@@ -85,8 +85,8 @@ public class CmdSpec {
 	private static boolean isOnCooldown(@NotNull CommandSender sender) {
 		Player senderPlayer = (Player) sender;
 		boolean isOnCooldown = main.getConfig()
-		                           .getBoolean("cooldown.enabled") && !sender.hasPermission(
-				"vitalheal.cooldown.bypass") && cooldownMap.containsKey(senderPlayer.getUniqueId());
+		                           .getBoolean("cooldown.enabled") && !sender.hasPermission("vitalheal.cooldown.bypass")
+		                       && cooldownMap.containsKey(senderPlayer.getUniqueId());
 		if (isOnCooldown) {
 			String timeRemaining = String.valueOf(
 					cooldownMap.get(senderPlayer.getUniqueId()) - System.currentTimeMillis() / 1000);
