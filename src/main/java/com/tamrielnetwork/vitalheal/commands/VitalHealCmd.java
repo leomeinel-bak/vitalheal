@@ -18,6 +18,7 @@
 
 package com.tamrielnetwork.vitalheal.commands;
 
+import com.tamrielnetwork.vitalheal.utils.Chat;
 import com.tamrielnetwork.vitalheal.utils.commands.Cmd;
 import com.tamrielnetwork.vitalheal.utils.commands.CmdSpec;
 import org.bukkit.Bukkit;
@@ -26,6 +27,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Map;
 
 public class VitalHealCmd
 		implements CommandExecutor {
@@ -51,12 +54,14 @@ public class VitalHealCmd
 				return;
 			}
 			assert player != null;
-			CmdSpec.doHeal(senderPlayer, player);
+			Chat.sendMessage(sender, Map.of("%player%", player.getName()), "player-healed");
+			player.setHealth(20);
 			return;
 		}
 		if (CmdSpec.isInvalidCmd(sender, "vitalheal.heal")) {
 			return;
 		}
-		CmdSpec.doHeal(senderPlayer);
+		Chat.sendMessage(senderPlayer, "healed");
+		senderPlayer.setHealth(20);
 	}
 }

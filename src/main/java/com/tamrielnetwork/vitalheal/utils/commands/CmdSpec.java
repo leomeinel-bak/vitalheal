@@ -40,30 +40,11 @@ public class CmdSpec {
 	}
 
 	public static boolean isInvalidCmd(@NotNull CommandSender sender, Player player, @NotNull String perm) {
-		if (Cmd.isNotPermitted(sender, perm)) {
-			return true;
-		}
-		if (Cmd.isInvalidPlayer(sender, player)) {
-			return true;
-		}
-		return isOnCooldown(sender);
+		return Cmd.isNotPermitted(sender, perm) || Cmd.isInvalidPlayer(sender, player) || isOnCooldown(sender);
 	}
 
 	public static boolean isInvalidCmd(@NotNull CommandSender sender, @NotNull String perm) {
-		if (Cmd.isNotPermitted(sender, perm)) {
-			return true;
-		}
-		return isOnCooldown(sender);
-	}
-
-	public static void doHeal(@NotNull CommandSender sender, @NotNull Player player) {
-		Chat.sendMessage(sender, Map.of("%player%", player.getName()), "player-healed");
-		player.setHealth(20);
-	}
-
-	public static void doHeal(@NotNull Player senderPlayer) {
-		Chat.sendMessage(senderPlayer, "healed");
-		senderPlayer.setHealth(20);
+		return Cmd.isNotPermitted(sender, perm) || isOnCooldown(sender);
 	}
 
 	private static void clearMap(@NotNull CommandSender sender) {
