@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program. If not, see https://github.com/TamrielNetwork/VitalHeal/blob/main/LICENSE
+ * along with this program. If not, see https://github.com/LeoMeinel/VitalHeal/blob/main/LICENSE
  */
 
 package com.tamrielnetwork.vitalheal.utils.commands;

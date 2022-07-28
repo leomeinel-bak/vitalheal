@@ -10,7 +10,7 @@
 <!--suppress ALL -->
 <br />
 <p align="center">
-  <a href="https://github.com/TamrielNetwork/VitalHeal">
+  <a href="https://github.com/LeoMeinel/VitalHeal">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -19,14 +19,14 @@
   <p align="center">
     Heal players on Spigot and Paper
     <br />
-    <a href="https://github.com/TamrielNetwork/VitalHeal"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/LeoMeinel/VitalHeal"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/TamrielNetwork/VitalHeal">View Demo</a>
+    <a href="https://github.com/LeoMeinel/VitalHeal">View Demo</a>
     ·
-    <a href="https://github.com/TamrielNetwork/VitalHeal/issues">Report Bug</a>
+    <a href="https://github.com/LeoMeinel/VitalHeal/issues">Report Bug</a>
     ·
-    <a href="https://github.com/TamrielNetwork/VitalHeal/issues">Request Feature</a>
+    <a href="https://github.com/LeoMeinel/VitalHeal/issues">Request Feature</a>
   </p>
 
 <!-- TABLE OF CONTENTS -->
@@ -126,7 +126,7 @@ cooldown-active: "&cYou can't use that command for another &b%time-left% &csecon
 
 ## Roadmap
 
-See the [open issues](https://github.com/TamrielNetwork/VitalHeal/issues) for a list of proposed features (and known
+See the [open issues](https://github.com/LeoMeinel/VitalHeal/issues) for a list of proposed features (and known
 issues).
 
 <!-- CONTRIBUTING -->
@@ -156,7 +156,7 @@ Leopold Meinel - [@TamrielN](https://twitter.com/TamrielN) - Twitter
 
 Leopold Meinel - [contact@tamriel.me](mailto:contact@tamriel.me) - eMail
 
-Project Link - [VitalHeal](https://github.com/TamrielNetwork/VitalHeal) - GitHub
+Project Link - [VitalHeal](https://github.com/LeoMeinel/VitalHeal) - GitHub
 
 <!-- ACKNOWLEDGEMENTS -->
 
@@ -166,26 +166,26 @@ Project Link - [VitalHeal](https://github.com/TamrielNetwork/VitalHeal) - GitHub
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
-[contributors-shield]: https://img.shields.io/github/contributors-anon/TamrielNetwork/VitalHeal?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors-anon/LeoMeinel/VitalHeal?style=for-the-badge
 
-[contributors-url]: https://github.com/TamrielNetwork/VitalHeal/graphs/contributors
+[contributors-url]: https://github.com/LeoMeinel/VitalHeal/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/TamrielNetwork/VitalHeal?label=Forks&style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/LeoMeinel/VitalHeal?label=Forks&style=for-the-badge
 
-[forks-url]: https://github.com/TamrielNetwork/VitalHeal/network/members
+[forks-url]: https://github.com/LeoMeinel/VitalHeal/network/members
 
-[stars-shield]: https://img.shields.io/github/stars/TamrielNetwork/VitalHeal?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/LeoMeinel/VitalHeal?style=for-the-badge
 
-[stars-url]: https://github.com/TamrielNetwork/VitalHeal/stargazers
+[stars-url]: https://github.com/LeoMeinel/VitalHeal/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/TamrielNetwork/VitalHeal?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/LeoMeinel/VitalHeal?style=for-the-badge
 
-[issues-url]: https://github.com/TamrielNetwork/VitalHeal/issues
+[issues-url]: https://github.com/LeoMeinel/VitalHeal/issues
 
-[license-shield]: https://img.shields.io/github/license/TamrielNetwork/VitalHeal?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/LeoMeinel/VitalHeal?style=for-the-badge
 
-[license-url]: https://github.com/TamrielNetwork/VitalHeal/blob/main/LICENSE
+[license-url]: https://github.com/LeoMeinel/VitalHeal/blob/main/LICENSE
 
-[quality-shield]: https://img.shields.io/codefactor/grade/github/TamrielNetwork/VitalHeal?style=for-the-badge
+[quality-shield]: https://img.shields.io/codefactor/grade/github/LeoMeinel/VitalHeal?style=for-the-badge
 
-[quality-url]: https://www.codefactor.io/repository/github/TamrielNetwork/VitalHeal
+[quality-url]: https://www.codefactor.io/repository/github/LeoMeinel/VitalHeal
