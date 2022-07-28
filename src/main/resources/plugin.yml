@@ -1,6 +1,6 @@
 name: VitalHeal
 version: @version@
-main: com.tamrielnetwork.vitalheal.VitalHeal
+main: dev.meinel.leo.vitalheal.VitalHeal
 api-version: 1.17
 authors: [ Leopold Meinel ]
 description: Gives players the ability to heal.

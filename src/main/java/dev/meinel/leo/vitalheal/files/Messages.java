@@ -16,9 +16,9 @@
  * along with this program. If not, see https://github.com/LeoMeinel/VitalHeal/blob/main/LICENSE
  */
 
-package com.tamrielnetwork.vitalheal.files;
+package dev.meinel.leo.vitalheal.files;
 
-import com.tamrielnetwork.vitalheal.VitalHeal;
+import dev.meinel.leo.vitalheal.VitalHeal;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;

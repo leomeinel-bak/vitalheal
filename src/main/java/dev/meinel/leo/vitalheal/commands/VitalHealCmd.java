@@ -16,11 +16,11 @@
  * along with this program. If not, see https://github.com/LeoMeinel/VitalHeal/blob/main/LICENSE
  */
 
-package com.tamrielnetwork.vitalheal.commands;
+package dev.meinel.leo.vitalheal.commands;
 
-import com.tamrielnetwork.vitalheal.utils.Chat;
-import com.tamrielnetwork.vitalheal.utils.commands.Cmd;
-import com.tamrielnetwork.vitalheal.utils.commands.CmdSpec;
+import dev.meinel.leo.vitalheal.utils.Chat;
+import dev.meinel.leo.vitalheal.utils.commands.Cmd;
+import dev.meinel.leo.vitalheal.utils.commands.CmdSpec;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

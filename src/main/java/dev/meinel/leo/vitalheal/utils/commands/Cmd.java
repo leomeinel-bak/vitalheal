@@ -16,9 +16,9 @@
  * along with this program. If not, see https://github.com/LeoMeinel/VitalHeal/blob/main/LICENSE
  */
 
-package com.tamrielnetwork.vitalheal.utils.commands;
+package dev.meinel.leo.vitalheal.utils.commands;
 
-import com.tamrielnetwork.vitalheal.utils.Chat;
+import dev.meinel.leo.vitalheal.utils.Chat;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;

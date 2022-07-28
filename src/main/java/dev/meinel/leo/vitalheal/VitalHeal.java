@@ -16,10 +16,10 @@
  * along with this program. If not, see https://github.com/LeoMeinel/VitalHeal/blob/main/LICENSE
  */
 
-package com.tamrielnetwork.vitalheal;
+package dev.meinel.leo.vitalheal;
 
-import com.tamrielnetwork.vitalheal.commands.VitalHealCmd;
-import com.tamrielnetwork.vitalheal.files.Messages;
+import dev.meinel.leo.vitalheal.commands.VitalHealCmd;
+import dev.meinel.leo.vitalheal.files.Messages;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
