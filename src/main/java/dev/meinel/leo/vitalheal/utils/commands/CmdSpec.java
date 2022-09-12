@@ -24,51 +24,51 @@ import java.util.UUID;
 
 public class CmdSpec {
 
-	private static final VitalHeal main = JavaPlugin.getPlugin(VitalHeal.class);
-	private static final HashMap<UUID, Long> cooldownMap = new HashMap<>();
+    private static final VitalHeal main = JavaPlugin.getPlugin(VitalHeal.class);
+    private static final HashMap<UUID, Long> cooldownMap = new HashMap<>();
 
-	private CmdSpec() {
-		throw new IllegalStateException("Utility class");
-	}
+    private CmdSpec() {
+        throw new IllegalStateException("Utility class");
+    }
 
-	public static boolean isInvalidCmd(@NotNull CommandSender sender, Player player, @NotNull String perm) {
-		return Cmd.isNotPermitted(sender, perm) || Cmd.isInvalidPlayer(sender, player) || isOnCooldown(sender);
-	}
+    public static boolean isInvalidCmd(@NotNull CommandSender sender, Player player, @NotNull String perm) {
+        return Cmd.isNotPermitted(sender, perm) || Cmd.isInvalidPlayer(sender, player) || isOnCooldown(sender);
+    }
 
-	public static boolean isInvalidCmd(@NotNull CommandSender sender, @NotNull String perm) {
-		return Cmd.isNotPermitted(sender, perm) || isOnCooldown(sender);
-	}
+    public static boolean isInvalidCmd(@NotNull CommandSender sender, @NotNull String perm) {
+        return Cmd.isNotPermitted(sender, perm) || isOnCooldown(sender);
+    }
 
-	private static void clearMap(@NotNull CommandSender sender) {
-		Player senderPlayer = (Player) sender;
-		cooldownMap.remove(senderPlayer.getUniqueId());
-	}
+    private static void clearMap(@NotNull CommandSender sender) {
+        Player senderPlayer = (Player) sender;
+        cooldownMap.remove(senderPlayer.getUniqueId());
+    }
 
-	private static void doTiming(@NotNull CommandSender sender) {
-		new BukkitRunnable() {
+    private static void doTiming(@NotNull CommandSender sender) {
+        new BukkitRunnable() {
 
-			@Override
-			public void run() {
-				clearMap(sender);
-			}
-		}.runTaskLaterAsynchronously(main, (main.getConfig()
-				.getLong("cooldown.time") * 20L));
-	}
+            @Override
+            public void run() {
+                clearMap(sender);
+            }
+        }.runTaskLaterAsynchronously(main, (main.getConfig()
+                .getLong("cooldown.time") * 20L));
+    }
 
-	private static boolean isOnCooldown(@NotNull CommandSender sender) {
-		Player senderPlayer = (Player) sender;
-		boolean isOnCooldown = main.getConfig()
-				.getBoolean("cooldown.enabled") && !sender.hasPermission("vitalheal.cooldown.bypass")
-				&& cooldownMap.containsKey(senderPlayer.getUniqueId());
-		if (isOnCooldown) {
-			String timeRemaining = String.valueOf(
-					cooldownMap.get(senderPlayer.getUniqueId()) - System.currentTimeMillis() / 1000);
-			Chat.sendMessage(sender, Map.of("%time-left%", timeRemaining), "cooldown-active");
-			return true;
-		}
-		cooldownMap.put(senderPlayer.getUniqueId(), main.getConfig()
-				.getLong("cooldown.time") + System.currentTimeMillis() / 1000);
-		doTiming(sender);
-		return false;
-	}
+    private static boolean isOnCooldown(@NotNull CommandSender sender) {
+        Player senderPlayer = (Player) sender;
+        boolean isOnCooldown = main.getConfig()
+                .getBoolean("cooldown.enabled") && !sender.hasPermission("vitalheal.cooldown.bypass")
+                && cooldownMap.containsKey(senderPlayer.getUniqueId());
+        if (isOnCooldown) {
+            String timeRemaining = String.valueOf(
+                    cooldownMap.get(senderPlayer.getUniqueId()) - System.currentTimeMillis() / 1000);
+            Chat.sendMessage(sender, Map.of("%time-left%", timeRemaining), "cooldown-active");
+            return true;
+        }
+        cooldownMap.put(senderPlayer.getUniqueId(), main.getConfig()
+                .getLong("cooldown.time") + System.currentTimeMillis() / 1000);
+        doTiming(sender);
+        return false;
+    }
 }
