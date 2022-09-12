@@ -1,19 +1,11 @@
 /*
- * VitalHeal is a Spigot Plugin that gives players the ability to heal.
- * Copyright © 2022 Leopold Meinel & contributors
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see https://github.com/LeoMeinel/VitalHeal/blob/main/LICENSE
+ * File: CmdSpec.java
+ * Author: Leopold Meinel (leo@meinel.dev)
+ * -----
+ * Copyright (c) 2022 Leopold Meinel & contributors
+ * SPDX ID: GPL-3.0-or-later
+ * URL: https://www.gnu.org/licenses/gpl-3.0-standalone.html
+ * -----
  */
 
 package dev.meinel.leo.vitalheal.utils.commands;
@@ -60,14 +52,14 @@ public class CmdSpec {
 				clearMap(sender);
 			}
 		}.runTaskLaterAsynchronously(main, (main.getConfig()
-		                                        .getLong("cooldown.time") * 20L));
+				.getLong("cooldown.time") * 20L));
 	}
 
 	private static boolean isOnCooldown(@NotNull CommandSender sender) {
 		Player senderPlayer = (Player) sender;
 		boolean isOnCooldown = main.getConfig()
-		                           .getBoolean("cooldown.enabled") && !sender.hasPermission("vitalheal.cooldown.bypass")
-		                       && cooldownMap.containsKey(senderPlayer.getUniqueId());
+				.getBoolean("cooldown.enabled") && !sender.hasPermission("vitalheal.cooldown.bypass")
+				&& cooldownMap.containsKey(senderPlayer.getUniqueId());
 		if (isOnCooldown) {
 			String timeRemaining = String.valueOf(
 					cooldownMap.get(senderPlayer.getUniqueId()) - System.currentTimeMillis() / 1000);
@@ -75,7 +67,7 @@ public class CmdSpec {
 			return true;
 		}
 		cooldownMap.put(senderPlayer.getUniqueId(), main.getConfig()
-		                                                .getLong("cooldown.time") + System.currentTimeMillis() / 1000);
+				.getLong("cooldown.time") + System.currentTimeMillis() / 1000);
 		doTiming(sender);
 		return false;
 	}
