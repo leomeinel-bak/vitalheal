@@ -11,7 +11,7 @@
 <!--suppress ALL -->
 <br />
 <p align="center">
-  <a href="https://github.com/LeoMeinel/VitalHeal">
+  <a href="https://github.com/LeoMeinel/vitalheal">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -20,14 +20,14 @@
   <p align="center">
     Heal players on Spigot and Paper
     <br />
-    <a href="https://github.com/LeoMeinel/VitalHeal"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/LeoMeinel/vitalheal"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/LeoMeinel/VitalHeal">View Demo</a>
+    <a href="https://github.com/LeoMeinel/vitalheal">View Demo</a>
     ·
-    <a href="https://github.com/LeoMeinel/VitalHeal/issues">Report Bug</a>
+    <a href="https://github.com/LeoMeinel/vitalheal/issues">Report Bug</a>
     ·
-    <a href="https://github.com/LeoMeinel/VitalHeal/issues">Request Feature</a>
+    <a href="https://github.com/LeoMeinel/vitalheal/issues">Request Feature</a>
   </p>
 
 <!-- ABOUT THE PROJECT -->
@@ -99,7 +99,7 @@ cooldown-active: "&cYou can't use that command for another &b%time-left% &csecon
 
 ## Roadmap
 
-See the [open issues](https://github.com/LeoMeinel/VitalHeal/issues) for a list of proposed features (and known
+See the [open issues](https://github.com/LeoMeinel/vitalheal/issues) for a list of proposed features (and known
 issues).
 
 <!-- CONTRIBUTING -->
@@ -127,7 +127,7 @@ Distributed under the GNU General Public License v3.0. See `LICENSE` for more in
 
 Leopold Meinel - [leo@meinel.dev](mailto:leo@meinel.dev) - eMail
 
-Project Link - [VitalHeal](https://github.com/LeoMeinel/VitalHeal) - GitHub
+Project Link - [VitalHeal](https://github.com/LeoMeinel/vitalheal) - GitHub
 
 <!-- ACKNOWLEDGEMENTS -->
 
@@ -137,15 +137,15 @@ Project Link - [VitalHeal](https://github.com/LeoMeinel/VitalHeal) - GitHub
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
-[contributors-shield]: https://img.shields.io/github/contributors-anon/LeoMeinel/VitalHeal?style=for-the-badge
-[contributors-url]: https://github.com/LeoMeinel/VitalHeal/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/LeoMeinel/VitalHeal?label=Forks&style=for-the-badge
-[forks-url]: https://github.com/LeoMeinel/VitalHeal/network/members
-[stars-shield]: https://img.shields.io/github/stars/LeoMeinel/VitalHeal?style=for-the-badge
-[stars-url]: https://github.com/LeoMeinel/VitalHeal/stargazers
-[issues-shield]: https://img.shields.io/github/issues/LeoMeinel/VitalHeal?style=for-the-badge
-[issues-url]: https://github.com/LeoMeinel/VitalHeal/issues
-[license-shield]: https://img.shields.io/github/license/LeoMeinel/VitalHeal?style=for-the-badge
-[license-url]: https://github.com/LeoMeinel/VitalHeal/blob/main/LICENSE
-[quality-shield]: https://img.shields.io/codefactor/grade/github/LeoMeinel/VitalHeal?style=for-the-badge
-[quality-url]: https://www.codefactor.io/repository/github/LeoMeinel/VitalHeal
+[contributors-shield]: https://img.shields.io/github/contributors-anon/LeoMeinel/vitalheal?style=for-the-badge
+[contributors-url]: https://github.com/LeoMeinel/vitalheal/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/LeoMeinel/vitalheal?label=Forks&style=for-the-badge
+[forks-url]: https://github.com/LeoMeinel/vitalheal/network/members
+[stars-shield]: https://img.shields.io/github/stars/LeoMeinel/vitalheal?style=for-the-badge
+[stars-url]: https://github.com/LeoMeinel/vitalheal/stargazers
+[issues-shield]: https://img.shields.io/github/issues/LeoMeinel/vitalheal?style=for-the-badge
+[issues-url]: https://github.com/LeoMeinel/vitalheal/issues
+[license-shield]: https://img.shields.io/github/license/LeoMeinel/vitalheal?style=for-the-badge
+[license-url]: https://github.com/LeoMeinel/vitalheal/blob/main/LICENSE
+[quality-shield]: https://img.shields.io/codefactor/grade/github/LeoMeinel/vitalheal?style=for-the-badge
+[quality-url]: https://www.codefactor.io/repository/github/LeoMeinel/vitalheal
