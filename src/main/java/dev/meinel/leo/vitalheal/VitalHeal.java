@@ -2,7 +2,7 @@
  * File: VitalHeal.java
  * Author: Leopold Meinel (leo@meinel.dev)
  * -----
- * Copyright (c) 2022 Leopold Meinel & contributors
+ * Copyright (c) 2023 Leopold Meinel & contributors
  * SPDX ID: GPL-3.0-or-later
  * URL: https://www.gnu.org/licenses/gpl-3.0-standalone.html
  * -----
@@ -29,8 +29,7 @@ public final class VitalHeal
         saveDefaultConfig();
         messages = new Messages();
         Bukkit.getLogger()
-                .info("VitalHeal v" + this.getDescription()
-                        .getVersion() + " enabled");
+                .info("VitalHeal v" + this.getPluginMeta().getVersion() + " enabled");
         Bukkit.getLogger()
                 .info("Copyright (C) 2022 Leopold Meinel");
         Bukkit.getLogger()
@@ -44,8 +43,7 @@ public final class VitalHeal
     @Override
     public void onDisable() {
         Bukkit.getLogger()
-                .info("VitalHeal v" + this.getDescription()
-                        .getVersion() + " disabled");
+                .info("VitalHeal v" + this.getPluginMeta().getVersion() + " disabled");
     }
 
     public Messages getMessages() {
