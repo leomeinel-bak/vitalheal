@@ -85,7 +85,6 @@ cooldown:
 ### Configuration - messages.yml
 
 ```yaml
-cmd: "&fUsage: &b/heal <player>"
 no-perms: "&cYou don't have enough permissions!"
 player-only: "&cThis command can only be executed by players!"
 not-online: "&cPlayer is not online!"
