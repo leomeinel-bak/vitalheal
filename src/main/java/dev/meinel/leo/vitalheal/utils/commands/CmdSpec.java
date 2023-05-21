@@ -33,12 +33,12 @@ public class CmdSpec {
 
     public static boolean isInvalidCmd(@NotNull CommandSender sender, Player player,
             @NotNull String perm) {
-        return Cmd.isNotPermitted(sender, perm) || Cmd.isInvalidPlayer(sender, player)
+        return !Cmd.isPermitted(sender, perm) || Cmd.isInvalidPlayer(sender, player)
                 || isOnCooldown(sender);
     }
 
     public static boolean isInvalidCmd(@NotNull CommandSender sender, @NotNull String perm) {
-        return Cmd.isNotPermitted(sender, perm) || isOnCooldown(sender);
+        return !Cmd.isPermitted(sender, perm) || isOnCooldown(sender);
     }
 
     private static void clearMap(@NotNull CommandSender sender) {

@@ -30,11 +30,11 @@ public class Cmd {
         return false;
     }
 
-    public static boolean isNotPermitted(@NotNull CommandSender sender, @NotNull String perm) {
-        if (!sender.hasPermission(perm)) {
-            Chat.sendMessage(sender, "no-perms");
+    public static boolean isPermitted(@NotNull CommandSender sender, @NotNull String perm) {
+        if (sender.hasPermission(perm)) {
             return true;
         }
+        Chat.sendMessage(sender, "no-perms");
         return false;
     }
 
